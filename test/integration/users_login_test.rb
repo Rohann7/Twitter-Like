@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
-  def setup
-    @user = users(:ram)
-  end
+
   test "login with valid information followed by logout" do
     get login_path
     post login_path, params: { session: { email:    @user.email,
